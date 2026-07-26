@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+const { title, description = "Accuro Consultancy — financial planning, modelling and Excel automation for businesses in the Maldives." } = Astro.props;
+const pathname = Astro.url.pathname;
+const isActive = (href) => (pathname === href || (href !== '/' && pathname.startsWith(href))) ? 'page' : undefined;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} · Accuro Consultancy</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        Accuro <span class="mark">CONSULTANCY</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" aria-current={isActive('/')}>Home</a>
+        <a href="/about" aria-current={isActive('/about')}>About</a>
+        <a href="/services" aria-current={isActive('/services')}>Services</a>
+        <a href="/templates" aria-current={isActive('/templates')}>Templates</a>
+        <a href="/clients" aria-current={isActive('/clients')}>Clients</a>
+        <a href="/contact" aria-current={isActive('/contact')}>Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="/contact">Book a consultation</a>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="/">Accuro <span class="mark">CONSULTANCY</span></a>
+        <p style="margin-top:14px; max-width:32ch;">Financial planning, modelling and Excel automation for businesses across the Maldives.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/templates">Templates</a></li>
+            <li><a href="/clients">Clients</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="/contact">Contact us</a></li>
+            <li><a href="mailto:hello@accuroconsultancy.mv">hello@accuroconsultancy.mv</a></li>
+            <li><a href="#">WhatsApp (coming soon)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      © {new Date().getFullYear()} Accuro Consultancy, Maldives. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+const freeTemplates = [
+  { title: 'Monthly Cash Flow Tracker', desc: 'Track inflows, outflows and running balance month to month.' },
+  { title: 'Simple Business Budget', desc: 'A clean starting budget template for small businesses.' },
+  { title: 'Expense Categoriser', desc: 'Sort and total expenses automatically by category.' },
+];
+const premiumTemplates = [
+  { title: '3-Statement Financial Model', price: 'MVR 1,200', desc: 'Integrated P&L, balance sheet and cash flow with built-in scenarios.' },
+  { title: 'Management Reporting Pack', price: 'MVR 950', desc: 'A ready-built monthly reporting suite with automated charts.' },
+  { title: 'Resort Revenue Dashboard', price: 'MVR 1,500', desc: 'Occupancy, ADR and RevPAR tracking built for hospitality businesses.' },
+];
+---
+<Layout title="Templates">
+  <section class="page-hero ledger-field">
+    <div class="wrap" style="position:relative; z-index:1;">
+      <span class="eyebrow">Templates</span>
+      <h1>Excel templates built from real consultancy work</h1>
+      <p class="lede">Download free templates to get started, or invest in a premium,
+        fully-built system ready to plug into your business today.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Free</span>
+        <h2>Start here, at no cost</h2>
+      </div>
+      <div class="grid grid-3">
+        {freeTemplates.map((t) => (
+          <div class="template-card">
+            <div class="template-thumb"></div>
+            <div class="template-body">
+              <span class="template-tag">Free</span>
+              <h3>{t.title}</h3>
+              <p>{t.desc}</p>
+              <div class="template-footer">
+                <span class="price">MVR 0</span>
+                <a class="btn btn-outline" href="/contact">Request download</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Premium</span>
+        <h2>Fully built systems, ready to use</h2>
+        <p>Premium templates come with setup guidance and are built to the same
+          standard we use with our advisory clients.</p>
+      </div>
+      <div class="grid grid-3">
+        {premiumTemplates.map((t) => (
+          <div class="template-card">
+            <div class="template-thumb"></div>
+            <div class="template-body">
+              <span class="template-tag premium">Premium</span>
+              <h3>{t.title}</h3>
+              <p>{t.desc}</p>
+              <div class="template-footer">
+                <span class="price">{t.price}</span>
+                <a class="btn btn-outline" href="/contact">Enquire</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:24px; font-size:0.9rem;">Online payment and instant checkout are coming soon. For now, premium templates are delivered after a quick enquiry.</p>
+    </div>
+  </section>
+</Layout>

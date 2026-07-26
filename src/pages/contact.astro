@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact">
+  <section class="page-hero ledger-field">
+    <div class="wrap" style="position:relative; z-index:1;">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's talk about your business</h1>
+      <p class="lede">Tell us a little about what you need, and we'll get back to you within one working day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-2">
+        <div class="contact-panel">
+          <h2>Send an enquiry</h2>
+          <p>This form doesn't send yet — we'll connect it in the next step of the build. For now, please email us directly.</p>
+          <form class="enquiry">
+            <div class="row-2">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" type="text" placeholder="Your name" disabled />
+              </div>
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" type="text" placeholder="Your business name" disabled />
+              </div>
+            </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@company.com" disabled />
+              </div>
+              <div class="field">
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" type="tel" placeholder="+960" disabled />
+              </div>
+            </div>
+            <div class="field">
+              <label for="service">What do you need help with?</label>
+              <select id="service" disabled>
+                <option>Financial planning</option>
+                <option>Budgeting &amp; forecasting</option>
+                <option>Financial modelling</option>
+                <option>Bookkeeping</option>
+                <option>Management reporting</option>
+                <option>Excel automation / dashboards</option>
+                <option>A template</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell us a bit about your business and what you're looking for" disabled></textarea>
+            </div>
+            <button class="btn btn-primary" type="button" disabled>Send enquiry (coming soon)</button>
+          </form>
+        </div>
+
+        <div>
+          <h2>Reach us directly</h2>
+          <p><strong>Email:</strong> <a href="mailto:hello@accuroconsultancy.mv">hello@accuroconsultancy.mv</a></p>
+          <p><strong>Based in:</strong> Maldives</p>
+          <p><strong>WhatsApp:</strong> coming soon — direct chat will be added here.</p>
+          <p style="margin-top:32px;">We typically respond within one working day. For urgent enquiries, email is the fastest way to reach us right now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

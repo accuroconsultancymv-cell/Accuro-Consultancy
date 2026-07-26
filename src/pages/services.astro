@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+const services = [
+  {
+    n: '01',
+    title: 'Financial Planning',
+    body: 'Structured, forward-looking plans that align your goals with realistic financial pathways.'
+  },
+  {
+    n: '02',
+    title: 'Budgeting & Forecasting',
+    body: 'Annual budgets and rolling forecasts that give you an early view of what\u2019s ahead.'
+  },
+  {
+    n: '03',
+    title: 'Financial Modelling',
+    body: 'Custom models for fundraising, expansion planning, pricing decisions and scenario testing.'
+  },
+  {
+    n: '04',
+    title: 'Bookkeeping',
+    body: 'Accurate, up-to-date books so your financial position is never a guessing game.'
+  },
+  {
+    n: '05',
+    title: 'Management Reporting',
+    body: 'Recurring reports that give leadership the numbers they need, in a format they\u2019ll actually read.'
+  },
+  {
+    n: '06',
+    title: 'Excel Automation',
+    body: 'We rebuild manual, error-prone spreadsheets into reliable, automated systems.'
+  },
+  {
+    n: '07',
+    title: 'Dashboard Development',
+    body: 'Live, visual dashboards that turn raw data into decisions your team can act on.'
+  },
+  {
+    n: '08',
+    title: 'Business Consulting',
+    body: 'Broader advisory support on operations, growth planning and financial strategy.'
+  },
+];
+---
+<Layout title="Services">
+  <section class="page-hero ledger-field">
+    <div class="wrap" style="position:relative; z-index:1;">
+      <span class="eyebrow">Services</span>
+      <h1>Advisory support across every stage of your finance function</h1>
+      <p class="lede">Engage us for a single project or an ongoing partnership — our
+        services are built to scale with your business.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-3">
+        {services.map((s) => (
+          <div class="card">
+            <span class="index">{s.n}</span>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap" style="text-align:center;">
+      <h2>Not sure which service fits your business?</h2>
+      <p style="max-width:52ch; margin:0 auto 28px;">Tell us what you're working with, and we'll recommend the right starting point.</p>
+      <a class="btn btn-primary" href="/contact">Book a consultation</a>
+    </div>
+  </section>
+</Layout>
