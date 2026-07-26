@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-const { title, description = "Accuro Consultancy — financial planning, modelling and Excel automation for businesses in the Maldives." } = Astro.props;
+const { title, description = "Accuro Consultancy — business registration, tax compliance, funding advisory and legal support for individuals and businesses in the Maldives." } = Astro.props;
 const pathname = Astro.url.pathname;
 const isActive = (href) => (pathname === href || (href !== '/' && pathname.startsWith(href))) ? 'page' : undefined;
 ---
@@ -19,13 +19,12 @@ const isActive = (href) => (pathname === href || (href !== '/' && pathname.start
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="/">
-        Accuro <span class="mark">CONSULTANCY</span>
+        <img src="/images/logo.png" alt="Accuro Consultancy" class="brand-logo" />
       </a>
       <nav class="main-nav">
         <a href="/" aria-current={isActive('/')}>Home</a>
         <a href="/about" aria-current={isActive('/about')}>About</a>
         <a href="/services" aria-current={isActive('/services')}>Services</a>
-        <a href="/templates" aria-current={isActive('/templates')}>Templates</a>
         <a href="/clients" aria-current={isActive('/clients')}>Clients</a>
         <a href="/contact" aria-current={isActive('/contact')}>Contact</a>
       </nav>
@@ -40,8 +39,8 @@ const isActive = (href) => (pathname === href || (href !== '/' && pathname.start
   <footer class="site-footer">
     <div class="wrap">
       <div>
-        <a class="brand" href="/">Accuro <span class="mark">CONSULTANCY</span></a>
-        <p style="margin-top:14px; max-width:32ch;">Financial planning, modelling and Excel automation for businesses across the Maldives.</p>
+        <a class="brand" href="/"><img src="/images/logo.png" alt="Accuro Consultancy" class="brand-logo" /></a>
+        <p style="margin-top:14px; max-width:34ch;">Business registration, tax compliance, funding advisory and legal support for businesses across the Maldives.</p>
       </div>
       <div class="cols">
         <div>
@@ -49,7 +48,6 @@ const isActive = (href) => (pathname === href || (href !== '/' && pathname.start
           <ul>
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
-            <li><a href="/templates">Templates</a></li>
             <li><a href="/clients">Clients</a></li>
           </ul>
         </div>
