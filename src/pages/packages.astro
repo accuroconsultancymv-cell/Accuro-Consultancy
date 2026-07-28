@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const gstServices = [
+  {
+    n: '01',
+    title: 'GST Return Filing',
+    price: 'MVR 500',
+    period: '/month',
+    note: 'Suitable for businesses that already maintain proper GST records and only require assistance with submission.',
+    features: [
+      'Preparation and filing of GST returns',
+      'Submission within MIRA deadlines',
+      'Basic review of provided GST figures',
+    ],
+  },
+  {
+    n: '02',
+    title: 'GST Calculation & Return Filing',
+    price: 'MVR 1,000 – 5,000',
+    period: '/month',
+    note: 'Suitable for businesses that need assistance calculating GST liabilities from their financial records.',
+    features: [
+      'Calculation of input and output GST',
+      'Review of sales records, purchase invoices, bank statements and supporting documents',
+      'Preparation of GST return figures',
+      'Filing of GST returns with MIRA',
+      'Assistance identifying GST-related issues before submission',
+    ],
+  },
+];
+
+const financeServices = [
+  {
+    n: '01',
+    title: 'Starter Package',
+    price: 'From MVR 3,000 – 5,000',
+    period: '/month',
+    note: 'Ideal for small businesses that need basic financial organization and regular record keeping.',
+    features: [
+      'Recording of income and expenses',
+      'Basic bookkeeping support',
+      'Organization of financial records',
+      'Monthly financial summary',
+      'General accounting support',
+    ],
+  },
+  {
+    n: '02',
+    title: 'Growth Package',
+    price: 'From MVR 6,000 – 10,000',
+    period: '/month',
+    note: 'Designed for growing businesses requiring more structured accounting and financial monitoring.',
+    features: [
+      'Complete bookkeeping services',
+      'Bank and account reconciliations',
+      'Accounts receivable and payable support',
+      'GST support and filing assistance',
+      'Monthly financial reports',
+      'Expense monitoring and review',
+      'Accounting system support',
+    ],
+    featured: true,
+  },
+  {
+    n: '03',
+    title: 'Finance Partner Package',
+    price: 'From MVR 10,000+',
+    period: '/month',
+    note: 'A complete outsourced finance department solution for businesses that require ongoing professional financial support.',
+    features: [
+      'Full finance and accounting support',
+      'Monthly management reports',
+      'Budget preparation and monitoring',
+      'Cash flow planning and analysis',
+      'Financial performance reviews',
+      'Business advisory support',
+      'Support with audits, tax matters and financial decisions',
+    ],
+  },
+];
+
+const taxServices = [
+  {
+    n: '01',
+    title: 'Basic Income Tax Filing',
+    price: 'From MVR 2,000 – 3,000',
+    period: '/year',
+    note: 'Suitable for individuals and small businesses with simple income and expense records.',
+    features: [
+      'Review of provided financial information',
+      'Preparation of income tax return',
+      'Calculation of taxable income and tax payable',
+      'Submission of return to MIRA',
+      'Confirmation of successful filing',
+    ],
+  },
+  {
+    n: '02',
+    title: 'Standard Income Tax Filing',
+    price: 'From MVR 3,000 – 5,000',
+    period: '/year',
+    note: 'Suitable for businesses requiring assistance in preparing and reviewing financial information before filing.',
+    features: [
+      'Review of income and expense records',
+      'Adjustment and classification of financial transactions',
+      'Preparation of income tax computation',
+      'Preparation and filing of income tax return',
+      'Review of available deductions and allowable expenses',
+      'Support with MIRA filing requirements',
+    ],
+    featured: true,
+  },
+  {
+    n: '03',
+    title: 'Comprehensive Tax Support Package',
+    price: 'From MVR 10,000 – 12,000',
+    period: '/year',
+    note: 'Suitable for companies requiring complete tax compliance assistance.',
+    features: [
+      'Detailed review of accounting records',
+      'Preparation of tax computation',
+      'Income tax return preparation and filing',
+      'Review of tax exposure and compliance risks',
+      'Assistance in resolving filing issues',
+      'Tax planning support',
+      'Support with MIRA queries related to the submitted return',
+    ],
+  },
+];
+---
+<Layout title="Packages" description="Transparent pricing for GST filing, outsourced finance and income tax return filing services from Accuro Consultancy, Maldives.">
+  <section class="page-hero ledger-field">
+    <div class="wrap" style="position:relative; z-index:1;">
+      <span class="eyebrow">Packages</span>
+      <h1>Clear pricing for every stage of your business</h1>
+      <p class="lede">Choose a package that fits where your business is today, from
+        straightforward GST filing to a fully outsourced finance department.
+        Every package can be tailored to your specific needs.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">GST Services</span>
+        <h2>GST return filing</h2>
+      </div>
+      <div class="grid grid-2">
+        {gstServices.map((p) => (
+          <div class={`pkg-card${p.featured ? ' pkg-featured' : ''}`}>
+            <span class="index">{p.n}</span>
+            <h3>{p.title}</h3>
+            <div class="pkg-price">
+              <span class="amount">{p.price}</span>
+              <span class="period">{p.period}</span>
+            </div>
+            <p class="pkg-note">{p.note}</p>
+            <ul class="pkg-features">
+              {p.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a class="btn btn-outline" href="/contact">Enquire</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Outsourced Finance Services</span>
+        <h2>Ongoing bookkeeping & financial management</h2>
+      </div>
+      <div class="grid grid-3">
+        {financeServices.map((p) => (
+          <div class={`pkg-card${p.featured ? ' pkg-featured' : ''}`}>
+            {p.featured && <span class="pkg-badge">Most popular</span>}
+            <span class="index">{p.n}</span>
+            <h3>{p.title}</h3>
+            <div class="pkg-price">
+              <span class="amount">{p.price}</span>
+              <span class="period">{p.period}</span>
+            </div>
+            <p class="pkg-note">{p.note}</p>
+            <ul class="pkg-features">
+              {p.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a class="btn btn-outline" href="/contact">Enquire</a>
+          </div>
+        ))}
+      </div>
+      <p class="pkg-disclaimer">Packages can be customized based on business size, transaction volume, and specific requirements.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Income Tax Return Filing Services</span>
+        <h2>Annual packages</h2>
+      </div>
+      <div class="grid grid-3">
+        {taxServices.map((p) => (
+          <div class={`pkg-card${p.featured ? ' pkg-featured' : ''}`}>
+            {p.featured && <span class="pkg-badge">Most popular</span>}
+            <span class="index">{p.n}</span>
+            <h3>{p.title}</h3>
+            <div class="pkg-price">
+              <span class="amount">{p.price}</span>
+              <span class="period">{p.period}</span>
+            </div>
+            <p class="pkg-note">{p.note}</p>
+            <ul class="pkg-features">
+              {p.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a class="btn btn-outline" href="/contact">Enquire</a>
+          </div>
+        ))}
+      </div>
+      <p class="pkg-disclaimer">Pricing may vary depending on business size, transaction volume, complexity, and availability of required documents.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap" style="text-align:center;">
+      <h2>Not sure which package fits your business?</h2>
+      <p style="max-width:52ch; margin:0 auto 28px;">Tell us about your business and transaction volume, and we'll recommend the right starting point — every package can be customized.</p>
+      <a class="btn btn-primary" href="/contact">Book a consultation</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .pkg-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 28px;
+  }
+
+  .pkg-featured {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+
+  .pkg-badge {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: var(--gold);
+    color: var(--ink-navy);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+
+  .pkg-card .index {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold-deep);
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .pkg-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .pkg-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .pkg-price .amount {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink-navy);
+  }
+
+  .pkg-price .period {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .pkg-note {
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+
+  .pkg-features {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .pkg-features li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.92rem;
+    color: var(--ink-navy);
+  }
+
+  .pkg-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--gold-deep);
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  .pkg-card .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .pkg-disclaimer {
+    margin-top: 24px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>

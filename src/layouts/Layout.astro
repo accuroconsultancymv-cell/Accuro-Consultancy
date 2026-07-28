@@ -25,6 +25,7 @@ const isActive = (href) => (pathname === href || (href !== '/' && pathname.start
         <a href="/" aria-current={isActive('/')}>Home</a>
         <a href="/about" aria-current={isActive('/about')}>About</a>
         <a href="/services" aria-current={isActive('/services')}>Services</a>
+        <a href="/packages" aria-current={isActive('/packages')}>Packages</a>
         <a href="/clients" aria-current={isActive('/clients')}>Clients</a>
         <a href="/contact" aria-current={isActive('/contact')}>Contact</a>
       </nav>
@@ -48,6 +49,7 @@ const isActive = (href) => (pathname === href || (href !== '/' && pathname.start
           <ul>
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
+            <li><a href="/packages">Packages</a></li>
             <li><a href="/clients">Clients</a></li>
           </ul>
         </div>
